@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= content_for?(:title) ? yield(:title) : "BBQ" %></title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag "application", :media => "all" %>
+
+  <%= javascript_include_tag "application" %>
+</head>
+<body>
+<div class="navbar navbar-expand ">
+  <div class="container justify-content-start">
+    <%= link_to "BBQ!", root_path, class: '' %>
+
+   <div class="navbar mx-5">
+      <ul class="nav nav-tabs">
+        <li class="nav-link"><%= link_to "Link1", "/path1"  %></li>
+        <li class="nav-link"><%= link_to "Link2", "/path2"  %></li>
+        <li class="nav-link"><%= link_to "Link3", "/path3"  %></li>
+      </ul>
+    </div>
+  </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9">
+      <%= yield %>
+    </div>
+    </div>
+
+<!--  <footer>-->
+<!--    <p>&copy; Company 2022</p>-->
+<!--  </footer>-->
+
+</div>
+</body>
+</html>
