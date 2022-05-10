@@ -18,9 +18,13 @@
 
    <div class="navbar mx-5">
       <ul class="nav nav-tabs">
-        <li class="nav-link"><%= link_to "Link1", "/path1"  %></li>
-        <li class="nav-link"><%= link_to "Link2", "/path2"  %></li>
-        <li class="nav-link"><%= link_to "Link3", "/path3"  %></li>
+        <% if user_signed_in? %>
+          <li class="nav-link"><%= link_to 'Профиль', current_user %></li>
+          <li class="nav-link"><%= link_to 'Выйти', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li class="nav-link"><%= link_to 'Войти', new_user_session_path %></li>
+          <li class="nav-link"><%= link_to 'Зарегистрироваться', new_user_registration_path %></li>
+        <% end %>
       </ul>
     </div>
   </div>
