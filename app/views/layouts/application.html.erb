@@ -19,14 +19,14 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="nav nav-tabs">
         <% if user_signed_in? %>
-          <li class="nav-item"><%= button_to 'Профиль', current_user, method: :get,
+          <li class="nav-item"><%= button_to I18n.t('profile'), current_user, method: :get,
                                              class: 'btn btn-light' %></li>
-          <li class="nav-item"><%= button_to 'Выйти', destroy_user_session_path, method: :delete,
+          <li class="nav-item"><%= button_to I18n.t('sign_out'), destroy_user_session_path, method: :delete,
                                              class: 'btn btn-light' %></li>
         <% else %>
-          <li class="nav-item"><%= link_to 'Войти', new_user_session_path,
+          <li class="nav-item"><%= link_to I18n.t('sign_in'), new_user_session_path,
                                            class: 'nav-link link-dark' %></li>
-          <li class="nav-item"><%= link_to 'Зарегистрироваться', new_user_registration_path,
+          <li class="nav-item"><%= link_to I18n.t('log_in'), new_user_registration_path,
                                            class: 'nav-link link-dark' %></li>
         <% end %>
       </ul>

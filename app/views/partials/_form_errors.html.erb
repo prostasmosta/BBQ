@@ -2,7 +2,7 @@
 
 <% if errors.any? %>
   <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      В вашей форме <%= I18n.t :error, count: errors.count %>
+    <%= I18n.t :error, count: errors.count %>
 
     <ul>
       <% errors.full_messages.each do |message| %>

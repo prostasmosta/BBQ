@@ -16,9 +16,9 @@
   <% end %>
 
   <div class="field mb-3">
-    <i>(Если не хотите менять пароль - оставьте поле пустым)</i>
+    <i><%= I18n.t('password_old') %></i>
     <%= f.password_field :password, autocomplete: "new-password",
-                         placeholder:"Новый пароль: минимум #{@minimum_password_length} символов"%>
+                         placeholder:""%>
     <% if @minimum_password_length %>
     <% end %>
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key" viewBox="0 0 16 16">
@@ -50,8 +50,8 @@
 
 <h3 class="mt-3">Удалить профиль</h3>
 
-<p class="mt-3"><%= button_to "Удалить", registration_path(resource_name),
-                          form: { data: { turbo_confirm: 'Вы точно хотите удалить свой профиль?' } },
+<p class="mt-3"><%= button_to I18n.t('delete'), registration_path(resource_name),
+                          form: { data: { turbo_confirm: I18n.t('confirm_user') } },
                           method: :delete, class: "btn btn-success mb-3" %></p>
 
-<%= link_to "Вернуться", :back %>
+<%= link_to I18n.t('back'), :back %>

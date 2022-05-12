@@ -1,4 +1,4 @@
-<%= form_for(@event, data: { turbo: false }) do |f| %>
+<%= form_for @event, data: { turbo: false } do |f| %>
   <%= render partial: 'partials/form_errors', locals: {model: @event} %>
 
   <div class="mb-3">
@@ -22,7 +22,7 @@
   </div>
 
   <div class="mt-4">
-    <%= f.submit 'Сохранить', class: 'btn btn-success' %>
-    или <%= link_to 'вернуться', :back %>
+    <%= f.submit I18n.t('save'), class: 'btn btn-success' %>
+    или <%= link_to I18n.t('back'), :back %>
   </div>
 <% end %>
