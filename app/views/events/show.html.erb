@@ -1,13 +1,13 @@
-<div class="container mt-3">
+<div class="container my-3">
   <h1><%= @event.title %></h1>
-  <h3><%= l @event.datetime, format: :short %></h3>
+  <h4><%= l @event.datetime, format: :short %></h4>
   <h3><small><%= link_to @event.address,
                          "https://yandex.ru/maps/?text=#{@event.address}",
                          class: '' %></small></h3>
-  <p><%= @event.description %></p>
+  <p class="mt-3"><%= @event.description %></p>
 
-<div class="buffer-top">
+<div class="mt-4">
   <%= link_to 'Изменить', edit_event_path(@event),
-              class: 'btn btn-primary' %> или <%= link_to 'вернуться', :back %>
+              class: 'btn btn-success' %> или <%= link_to 'вернуться', :back %>
 </div>
 </div>

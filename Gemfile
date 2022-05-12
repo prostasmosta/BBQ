@@ -11,10 +11,8 @@ gem 'jsbundling-rails'
 gem 'turbo-rails'
 gem 'stimulus-rails'
 gem 'cssbundling-rails'
-
-# gem 'bcrypt', '~> 3.1.7'
-
-# gem 'sassc-rails'
+gem 'devise-i18n'
+gem 'rails-i18n'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
