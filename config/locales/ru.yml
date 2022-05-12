@@ -32,3 +32,5 @@ ru:
     one: '%{count} ошибка'
     few: '%{count} ошибки'
     many: '%{count} ошибок'
+
+  confirm_event: 'Вы точно хотите удалить событие?'
