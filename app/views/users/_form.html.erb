@@ -11,6 +11,12 @@
     <%= f.text_field :email, class: 'form-control' %>
   </div>
 
+  <div class="">
+    <%= f.label :avatar %>
+    <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
+    <%= f.file_field :avatar %>
+  </div>
+
   <div class="my-4">
     <%= f.submit I18n.t('save'), class: 'btn btn-success' %>
     или <%= link_to I18n.t('back'), :back %>
