@@ -2,7 +2,7 @@ class Subscription < ApplicationRecord
   EMAIL_REGEXP = /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/
 
   belongs_to :event
-  belongs_to :user
+  belongs_to :user, optional:true
 
   validates :event, presence: true
 
@@ -10,8 +10,6 @@ class Subscription < ApplicationRecord
   validates :user_email, presence: true, format: EMAIL_REGEXP, unless: -> { user.present? }
   validates :user, uniqueness: {scope: :event_id}, if: -> { user.present? }
   validates :user_email, uniqueness: {scope: :event_id}, unless: -> { user.present? }
-
-  private
 
   def user_name
     user.present? ? user.name : super
