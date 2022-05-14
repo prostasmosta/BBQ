@@ -2,8 +2,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  mount_uploader :avatar, AvatarUploader
-
   has_many :events
   has_many :comments
   has_many :subscriptions
@@ -13,6 +11,8 @@ class User < ActiveRecord::Base
   before_validation :set_name, on: :create
 
   after_commit :link_subscriptions, on: :create
+
+  mount_uploader :avatar, AvatarUploader
 
   private
 

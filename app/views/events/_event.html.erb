@@ -7,5 +7,12 @@
       <p class="card-text"><%= l event.datetime, format: :short %></p>
       <p class="card-text"><%= event.address %></p>
     </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <% event.visitors.each do |user| %>
+          <%= image_tag user_avatar_thumb(user), style: 'width: 30px', title: user.name %>
+        <% end %>
+      </li>
+    </ul>
   </div>
 </div>
