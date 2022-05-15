@@ -48,6 +48,10 @@ ru:
       created: 'Вы добавили фотографию к событию'
       destroyed: 'Вы удалили фотку'
 
+  mailers:
+    subscr: "Новая подписка на %{title}"
+    comment: "Новый комментарий @ %{title}"
+
   app:
     name: 'ББкью'
     company: 'Хороший программист'
@@ -65,6 +69,22 @@ ru:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
 
+  event_mailer:
+    comment:
+      title: 'Новый комментарий'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+    subscription:
+      title: 'Новая подписка'
+      name: 'Имя'
+      email: 'Email'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+
   confirm_event: 'Вы точно хотите удалить событие?'
   confirm_user: 'Вы точно хотите удалить свой профиль?'
   delete_event: 'Удалить событие'
@@ -79,5 +99,5 @@ ru:
   user_edit: 'Редактировать профиль'
   edit: 'Изменить'
   password_edit: 'Сменить пароль'
-  password_lenght: 'Новый пароль: минимум #{@minimum_password_length} символов'
+  password_lenght: 'Новый пароль: минимум %{pw} символов'
   password_old: '(Если не хотите менять пароль - оставьте поле пустым)'
