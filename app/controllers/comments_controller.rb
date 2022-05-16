@@ -35,6 +35,7 @@ class CommentsController < ApplicationController
 
   def set_comment
     @comment = @event.comments.find(params[:id])
+
   end
 
   def comment_params
@@ -42,9 +43,13 @@ class CommentsController < ApplicationController
   end
 
   def notify_subscribers(event, comment)
-    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
+    if @new_comment.user.present?
+      all_emails = (event.subscriptions.map(&:user_email) + [event.user.email] - [@new_comment.user.email]).uniq
+    else
+      all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
+    end
 
-    all_emails.each do |mail|
+      all_emails.each do |mail|
       EventMailer.comment(event, comment, mail).deliver_now
     end
   end
