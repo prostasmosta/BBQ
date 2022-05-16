@@ -79,5 +79,5 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = {host: 'bbq-events-manager.herokuapp.com'}
 
-  config.action_mailer.delivery_method = :mailjet_api
+  config.action_mailer.delivery_method = :mailjet
 end
