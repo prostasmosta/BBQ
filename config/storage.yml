@@ -8,9 +8,10 @@ local:
 
 yandex:
   service: S3
-  access_key_id: ENV['YANDEX_KEY_ID']
-  secret_access_key: ENV['YANDEX_SECRET_KEY']
-  bucket: bucketname
+  access_key_id: <%= Rails.application.credentials.dig(:yc, :access_key_id) %>
+  secret_access_key: <%= Rails.application.credentials.dig(:yc, :secret_access_key) %>
+  region: ru-central1
+  bucket: bbq-rails7-bs5
   endpoint: 'https://storage.yandexcloud.net'
   force_path_style: true
 

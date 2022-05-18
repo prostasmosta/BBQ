@@ -6,6 +6,7 @@ ruby '3.0.2'
 gem 'rails', '~> 7.0.2', '>= 7.0.2.4'
 
 gem 'active_storage_validations'
+gem 'aws-sdk-s3'
 gem 'cssbundling-rails'
 gem 'devise'
 gem 'devise-i18n'
