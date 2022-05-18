@@ -4,30 +4,31 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.2'
 
 gem 'rails', '~> 7.0.2', '>= 7.0.2.4'
-gem 'devise'
-gem 'sprockets-rails'
-gem 'puma', '~> 5.0'
-gem 'jsbundling-rails'
-gem 'turbo-rails'
-gem 'stimulus-rails'
+
+gem 'active_storage_validations'
 gem 'cssbundling-rails'
+gem 'devise'
 gem 'devise-i18n'
-gem 'rails-i18n'
-gem 'carrierwave'
-gem 'fog-aws'
-gem 'rmagick'
-gem 'mailjet'
 gem 'dotenv-rails'
+gem 'fog-aws'
+gem "image_processing", ">= 1.2"
+gem 'jsbundling-rails'
+gem 'mailjet'
+gem 'puma', '~> 5.0'
+gem 'rails-i18n'
+gem 'sprockets-rails'
+gem 'stimulus-rails'
+gem 'turbo-rails'
 
 group :development, :test do
-  gem 'sqlite3', '~> 1.4'
   gem 'debug', platforms: %i[ mri mingw x64_mingw ]
-end
-
-group :production do
-  gem 'pg'
+  gem 'sqlite3', '~> 1.4'
 end
 
 group :development do
   gem 'web-console'
+end
+
+group :production do
+  gem 'pg'
 end

@@ -1,12 +1,16 @@
 <div class="col-sm-6 col-lg-4">
   <div class="card mt-2">
     <div class="my-3 text-center">
-      <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url %>
+      <%= link_to image_tag(photo.photo, class: 'img-fluid mb-2'), photo.photo %>
 
-      <div class="text-center mt-3">
+      <div class="text-center mt-3 mb-1">
         Добавил
         <%= render partial: 'users/user', object: photo.user %>
       </div>
+
+      <%= button_to(bi_icon('trash'), event_photo_path(photo.event, photo), method: :delete,
+                    class: 'btn btn-link p-0', form_class: 'd-inline', title: 'Удалить фото') if
+            current_user_can_edit?(photo) %>
     </div>
   </div>
 </div>

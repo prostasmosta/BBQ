@@ -1,15 +1,15 @@
 module ApplicationHelper
   def user_avatar(user)
-    if user.avatar?
-      user.avatar.url
+    if user.avatar.attached?
+      user.avatar
     else
       asset_path('user.jpg')
     end
   end
 
   def user_avatar_thumb(user)
-    if user.avatar.file.present?
-      user.avatar.thumb.url
+    if user.avatar.attached?
+      user.avatar.variant(:thumb)
     else
       asset_path('user.jpg')
     end
@@ -19,7 +19,7 @@ module ApplicationHelper
     photos = event.photos.persisted
 
     if photos.any?
-      photos.sample.photo.url
+      photos.sample.photo.variant(resize_to_limit: [130, 130]).processed
     else
       asset_path('event.jpg')
     end
@@ -29,14 +29,13 @@ module ApplicationHelper
     photos = event.photos.persisted
 
     if photos.any?
-      photos.sample.photo.thumb.url
+      photos.sample.photo.variant(:thumb).url
     else
       asset_path('event_thumb.jpg')
     end
   end
 
-  #TODO
-  def fa_icon(icon_class)
-    content_tag 'span', '', class: "fa fa-#{icon_class}"
+  def bi_icon(icon_class)
+    content_tag 'i', '', class: "bi bi-#{icon_class}"
   end
 end

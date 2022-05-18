@@ -1,7 +1,6 @@
 <div class="text-center">
   <h1><%= @user.name %></h1>
-
-  <%= image_tag user_avatar(@user), style: 'width: 25%' %>
+    <%= image_tag user_avatar(@user), style: 'width: 25%', class: 'rounded-circle' %>
 
   <% if @user == current_user %>
     <p class="mt-3">

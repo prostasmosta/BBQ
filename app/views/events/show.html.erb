@@ -25,12 +25,17 @@
   <div class="col-md-8">
       <h3 class="text-center mt-3">Галерея</h3>
         <div class="row">
-            <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
+          <% unless @event.photos.except.present? %>
+            <p class="text-muted text-center my-3"><%= t('events.no_photos') %></p>
+          <% end %>
+          <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
         </div>
 
-      <div class="">
-        <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
-      </div>
+      <% if user_signed_in? %>
+        <div class="">
+          <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
+        </div>
+      <% end %>
 
     <div class="">
       <%= render partial: 'comments/form',
@@ -50,6 +55,11 @@
     <div class="">
       <h4 class="text-white bg-dark text-center p-2 rounded-pill">Пойдут:</h4>
       <div class="text-center">
+
+        <% if @event.subscriptions.except(@new_subscription).empty? %>
+          <p class="text-center text-muted"><%= t 'events.no_subscribers' %></p>
+        <% end %>
+
         <p><%= render partial: 'subscriptions/subscription',
                      collection: @event.subscriptions.except(@new_subscription) %></p>
       </div>
