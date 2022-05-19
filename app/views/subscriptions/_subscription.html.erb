@@ -9,7 +9,7 @@
       <% end %>
       <td>
       <% if current_user_can_edit?(subscription) %>
-        <%= button_to 'Удалить', event_subscription_path(subscription.event, subscription), method: :delete,
+        <%= button_to t('.delete'), event_subscription_path(subscription.event, subscription), method: :delete,
                       form: { data: { turbo_confirm: t('.destroy_confirm') } },
                       class: 'btn btn-danger'%>
       <% end %>

@@ -59,7 +59,10 @@ ru:
 
   app:
     name: 'ББкью'
-    company: 'Хороший программист'
+    profile: 'Профиль'
+    registration: 'Зарегистрироваться'
+    log_out: 'Выйти'
+    enter: 'Войти'
 
   error:
     one: 'В вашей форме %{count} ошибка'
@@ -69,10 +72,16 @@ ru:
   comments:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот комменатрий?'
+      delete: 'Удалить'
+    form:
+      send: 'Отправить'
 
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+      delete: 'Удалить'
+    form:
+      subscribe: 'Подписаться'
 
   event_mailer:
     comment:
@@ -101,11 +110,48 @@ ru:
     password_lenght: 'Новый пароль: минимум %{pw} символов'
     password_old: '(Если не хотите менять пароль - оставьте поле пустым)'
     confirm_user: 'Вы точно хотите удалить свой профиль?'
+    forgot_password: 'Забыли пароль?'
+    password_confirmation: 'Подтверждение пароля'
+    current_password: 'Текущий пароль'
+    send: 'Отправить'
+    update: 'Обновить'
+    delete_profile: 'Удалить профиль'
+    delete: 'Удалить'
+    back: 'вернуться'
+    conf_wait: 'Currently waiting confirmation for:'
+    registration: 'Регистрация'
+    ready: 'Готово'
+    input: 'Вход'
+    enter: 'Войти'
+    remember_me: 'Запомнить меня'
+    registr: 'Зарегистрироваться'
+    forgot_passw: 'Забыли пароль?'
 
   events:
     confirm_event: 'Вы точно хотите удалить событие?'
     no_photos: 'Пока никто не выложил фотографии :('
     no_subscribers: 'На событие еще никто не подписался'
+    back: 'вернуться'
+    save: 'Сохранить'
+    event_edit: 'Редактирование события'
+    all_events: 'Все события'
+    new_event: 'Новое событие'
+    edit: 'Изменить'
+    delete_event: 'Удалить событие'
+    gallery: 'Галерея'
+    calling: 'Зовет:'
+    going: 'Пойдут:'
+    i_go: 'Я пойду:'
 
   users:
     no_event: 'Пользователь пока не организовал ни одного события'
+    back: 'вернуться'
+    save: 'Сохранить'
+    editing_profile: 'Редактирование профиля'
+    edit_profile: 'Редактировать профиль'
+    change_passw: 'Сменить пароль'
+    owner: 'Организовал:'
+    
+  photos:
+    download: 'Загрузить'
+    delete: 'Удалить фото'

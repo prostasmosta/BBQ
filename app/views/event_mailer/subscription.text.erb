@@ -1,11 +1,11 @@
-Новая подписка
+<%= t('.title') %>
 ----
 
-Имя: <%= @name %>
-Email: <%=  @email %>
+<%= t('.name') %>: <%= @name %>
+<%= t('.email') %>: <%=  @email %>
 
 ----------------------
 
-Событие: <%= link_to @event.title, event_url(@event) %>
-Состоится: <%= l @event.datetime, format: :short %>
-Организатор: <%= @event.user.name %>
+<%= t('.event') %>: <%= link_to @event.title, event_url(@event) %>
+<%= t('.datetime') %>: <%= l @event.datetime, format: :short %>
+<%= t('.owner') %>: <%= @event.user.name %>

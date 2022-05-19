@@ -16,7 +16,7 @@
 
       <td>
         <% if current_user_can_edit?(comment) %>
-          <%= button_to 'Удалить', event_comment_path(comment.event, comment), method: :delete,
+          <%= button_to t('. delete'), event_comment_path(comment.event, comment), method: :delete,
                         form: { data: { turbo_confirm: t('.destroy_confirm') } },
                         class: 'btn btn-danger' %>
         <% end %>

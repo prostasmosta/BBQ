@@ -1,14 +1,14 @@
-<h1><%= t '.title' %></h1>
+<h1><%= t('.title') %></h1>
 <h3><%= link_to image_tag(@photo.photo, class: 'img-fluid mb-2', style: 'width:130px'), @photo.photo %></h3>
-<p><%= t '.author' %>: <strong><%= @photo.user.name %></strong></p>
+<p><%= t('.author') %>: <strong><%= @photo.user.name %></strong></p>
 
 <hr/>
 
-<%= t '.event' %>
+<%= t('.event') %>
 <h3><%= link_to @photo.event.title, event_url(@photo.event) %></h3>
 
-<%= t '.datetime' %>
+<%= t('.datetime') %>
 <h4><%= l @photo.event.datetime, format: :short %></h4>
 
-<%= t '.owner' %>
+<%= t('.owner') %>
 <h4><%= @photo.event.user.name %></h4>

@@ -8,38 +8,38 @@
 
   <% if current_user_can_edit?(@event) %>
     <div class="mt-4">
-      <%= link_to 'Изменить', edit_event_path(@event),
-                  class: 'btn btn-success' %> или <%= link_to 'вернуться', :back %>
+      <%= link_to t('events.edit'), edit_event_path(@event),
+                  class: 'btn btn-success' %> или <%= link_to t('events.back'), :back %>
     </div>
 
     <div class="mt-4">
-      <%= button_to 'Удалить событие', event_path(@event),
+      <%= button_to t('events.delete_event'), event_path(@event),
                     method: :delete,
-                    form: { data: { turbo_confirm: I18n.t('events.confirm_event') } },
+                    form: { data: { turbo_confirm: t('events.confirm_event') } },
                     class: 'btn btn-danger' %>
     </div>
-    <% end %>
+  <% end %>
 </div>
 
 <div class="row">
   <div class="col-md-8">
-      <h3 class="text-center mt-3">Галерея</h3>
-        <div class="row">
-          <% unless @event.photos.except.present? %>
-            <p class="text-muted text-center my-3"><%= t('events.no_photos') %></p>
-          <% end %>
-          <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
-        </div>
-
-      <% if user_signed_in? %>
-        <div class="">
-          <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
-        </div>
+    <h3 class="text-center mt-3"><%= t('events.gallery') %></h3>
+    <div class="row">
+      <% unless @event.photos.except.present? %>
+        <p class="text-muted text-center my-3"><%= t('events.no_photos') %></p>
       <% end %>
+      <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
+    </div>
+
+    <% if user_signed_in? %>
+      <div class="">
+        <%= render partial: 'photos/form', locals: { photo: @new_photo || @event.photos.build } %>
+      </div>
+    <% end %>
 
     <div class="">
       <%= render partial: 'comments/form',
-                 locals: {comment: @new_comment || @event.comments.build} %>
+                 locals: { comment: @new_comment || @event.comments.build } %>
 
       <div class="my-3">
         <%= render partial: 'comments/comment',
@@ -49,11 +49,11 @@
   </div>
 
   <div class="col-md-4">
-      <h4 class="text-white bg-dark text-center p-2 rounded-pill">Зовет:</h4>
-      <p class="text-center"><%= render partial: 'users/user', object: @event.user %></p>
+    <h4 class="text-white bg-dark text-center p-2 rounded-pill"><%= t('events.calling') %></h4>
+    <p class="text-center"><%= render partial: 'users/user', object: @event.user %></p>
 
     <div class="">
-      <h4 class="text-white bg-dark text-center p-2 rounded-pill">Пойдут:</h4>
+      <h4 class="text-white bg-dark text-center p-2 rounded-pill"><%= t('events.going') %></h4>
       <div class="text-center">
 
         <% if @event.subscriptions.except(@new_subscription).empty? %>
@@ -61,16 +61,18 @@
         <% end %>
 
         <p><%= render partial: 'subscriptions/subscription',
-                     collection: @event.subscriptions.except(@new_subscription) %></p>
+                      collection: @event.subscriptions.except(@new_subscription) %></p>
       </div>
     </div>
-    <div class="mt-3">
-      <h4 class="text-white bg-success text-center p-2 rounded-pill">Я пойду:</h4>
-      <div>
-        <%= render partial: 'subscriptions/form', locals: {
-          subscription: @new_subscription || @event.subscriptions.build
-        } %>
+    <% unless current_user == @event.user %>
+      <div class="mt-3">
+        <h4 class="text-white bg-success text-center p-2 rounded-pill"><%= t('events.i_go') %></h4>
+        <div>
+          <%= render partial: 'subscriptions/form', locals: {
+            subscription: @new_subscription || @event.subscriptions.build
+          } %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>

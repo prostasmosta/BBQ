@@ -13,19 +13,19 @@
 <body class="mb-5">
 <div class="navbar navbar-expand navbar-light bg-light">
   <div class="container justify-content-start">
-    <%= link_to I18n.t('app.name'), root_path, class: 'navbar-brand' %>
+    <%= link_to t('app.name'), root_path, class: 'navbar-brand' %>
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="nav nav-tabs">
         <% if user_signed_in? %>
-          <li class="nav-item"><%= button_to 'Профиль', current_user, method: :get,
+          <li class="nav-item"><%= button_to t('app.profile'), current_user, method: :get,
                                              class: 'btn btn-light' %></li>
-          <li class="nav-item"><%= button_to 'Выйти', destroy_user_session_path, method: :delete,
+          <li class="nav-item"><%= button_to t('app.log_out'), destroy_user_session_path, method: :delete,
                                              data: { turbo: false }, class: 'btn btn-light' %></li>
         <% else %>
-          <li class="nav-item"><%= link_to 'Войти', new_user_session_path,
+          <li class="nav-item"><%= link_to t('app.enter'), new_user_session_path,
                                            class: 'nav-link link-dark' %></li>
-          <li class="nav-item"><%= link_to 'Зарегистрироваться', new_user_registration_path,
+          <li class="nav-item"><%= link_to t('app.registration'), new_user_registration_path,
                                            class: 'nav-link link-dark' %></li>
         <% end %>
       </ul>
