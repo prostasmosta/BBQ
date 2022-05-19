@@ -1,0 +1,10 @@
+<%= t '.title' %>
+<h3><%= link_to image_tag(@photo.photo, class: 'img-fluid mb-2', style: 'width:130px'), @photo.photo %></h3>
+----
+
+<%= t '.author' %>: <%= @photo.user.name %>
+
+--------------------------------
+<%= t '.event' %>: <h3><%= link_to @photo.event.title, event_url(@photo.event) %></h3>
+<%= t '.datetime' %>: <%= l @photo.event.datetime, format: :short %>
+<%= t '.owner' %>: <%= @photo.event.user.name %>

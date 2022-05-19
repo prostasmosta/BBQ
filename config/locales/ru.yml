@@ -83,6 +83,12 @@ ru:
       event: 'Событие'
       datetime: 'Дата проведения'
       owner: 'Организатор'
+    photo:
+      title: 'Новая фотография'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Дата проведения'
+      owner: 'Организатор'
 
   devise:
     password_edit: 'Сменить пароль'
