@@ -5,7 +5,13 @@ ru:
       event: 'Событие'
       subscription: 'Подписка'
       comment: 'Комментарий'
-
+    errors:
+      models:
+        subscription:
+          attributes:
+            user_email:
+              existing_email: ' уже зарегистрирован. Войдите, чтобы подписаться.'
+              same_user: ' Извините, Вы не можете подписаться на свое событие.'
     attributes:
       user:
         email: 'Email'
