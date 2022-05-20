@@ -12,7 +12,8 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'dotenv-rails'
 gem 'fog-aws'
-gem "image_processing", ">= 1.2"
+gem 'image_processing', '>= 1.2'
+gem 'jquery-rails'
 gem 'jsbundling-rails'
 gem 'mailjet'
 gem 'puma', '~> 5.0'
@@ -28,7 +29,7 @@ end
 
 group :development do
   gem 'web-console'
-  gem "letter_opener"
+  gem 'letter_opener'
 end
 
 group :production do

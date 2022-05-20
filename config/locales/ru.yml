@@ -24,6 +24,7 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+        pincode: 'Пин-код доступа'
       subscription:
         user_email: 'Email'
         user_name: 'Имя'
@@ -38,6 +39,7 @@ ru:
       created: 'Вы создали новое мероприятие'
       updated: 'Вы обновили мероприятие'
       destroyed: 'Вы удалили мероприятие :('
+      wrong_pincode: 'Неверный пин-код!'
     users:
       updated: 'Вы обновили свой профиль'
     comments:
@@ -133,7 +135,8 @@ ru:
     no_subscribers: 'На событие еще никто не подписался'
     back: 'вернуться'
     save: 'Сохранить'
-    event_edit: 'Редактирование события'
+    confirm: 'Подтвердить'
+    edit_event: 'Редактирование события'
     all_events: 'Все события'
     new_event: 'Новое событие'
     edit: 'Изменить'
@@ -142,6 +145,9 @@ ru:
     calling: 'Зовет:'
     going: 'Пойдут:'
     i_go: 'Я пойду:'
+    pincode_access: 'Доступ к данному событию только по пин-коду'
+    to_index: 'на главную'
+    pincode: 'Пин-код доступа'
 
   users:
     no_event: 'Пользователь пока не организовал ни одного события'
