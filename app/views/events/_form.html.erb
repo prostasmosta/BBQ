@@ -1,5 +1,5 @@
 <%= form_for event, data: { turbo: false } do |f| %>
-  <%= render partial: 'partials/form_errors', locals: {model: event} %>
+  <%= render partial: 'partials/form_errors', locals: {errors: event.errors} %>
 
   <div class="mb-3 mt-2">
     <%= f.label :title %>
@@ -28,6 +28,7 @@
 
   <div class="mt-4">
     <%= f.submit t('events.save'), class: 'btn btn-success' %>
-    или <%= link_to t('events.back'), :back %>
+    <%= t('events.or') %>
+    <%= link_to t('events.back'), :back %>
   </div>
 <% end %>

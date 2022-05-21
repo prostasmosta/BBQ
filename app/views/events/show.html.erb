@@ -9,7 +9,9 @@
   <% if current_user_can_edit?(@event) %>
     <div class="mt-4">
       <%= link_to t('events.edit'), edit_event_path(@event),
-                  class: 'btn btn-success' %> или <%= link_to t('events.back'), :back %>
+                  class: 'btn btn-success' %>
+      <%= t('events.or') %>
+      <%= link_to t('events.back'), :back %>
     </div>
 
     <div class="mt-4">
