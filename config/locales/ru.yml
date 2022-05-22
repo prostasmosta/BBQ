@@ -92,6 +92,7 @@ ru:
       event: 'Событие'
       datetime: 'Дата проведения'
       owner: 'Организатор'
+      subject: 'Новый комментарий в %{event}'
     subscription:
       title: 'Новая подписка'
       name: 'Имя'
@@ -100,12 +101,14 @@ ru:
       event: 'Событие'
       datetime: 'Дата проведения'
       owner: 'Организатор'
+      subject: 'Новая подписка на %{event}'
     photo:
       title: 'Новая фотография'
       author: 'Автор'
       event: 'Событие'
       datetime: 'Дата проведения'
       owner: 'Организатор'
+      subject: 'Добавлена новая фотография в %{event}'
 
   devise:
     password_edit: 'Сменить пароль'
