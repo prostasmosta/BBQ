@@ -9,6 +9,9 @@
 
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=<%= ENV['YANDEX_MAP_API'] %>"
+          type="text/javascript"></script>
 </head>
 <body class="mb-5">
 <div class="navbar navbar-expand navbar-light bg-light">
