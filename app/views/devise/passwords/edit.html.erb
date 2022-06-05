@@ -1,0 +1,40 @@
+<h2 class="my-3 px-2"><%= t('devise.change_passw') %></h2>
+<div class="row">
+  <div class="col-md-8">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put },
+                 data: { turbo: false }) do |f| %>
+      <div class="px-2">
+        <%= render "devise/shared/error_messages", resource: resource %>
+      </div>
+      <%= f.hidden_field :reset_password_token %>
+
+      <div class="field mb-3 d-flex flex-row align-items-center justify-content-start">
+        <div class="flex-fill px-2">
+          <%= f.password_field :password, autofocus: true, class: 'form-control', autocomplete: "new-password",
+                               placeholder: t('devise.password_lenght', pw: @minimum_password_length) %>
+        </div>
+        <div class="">
+          <%= bi_icon('key') %>
+        </div>
+      </div>
+
+      <div class="field mb-3 d-flex flex-row align-items-center justify-content-start">
+        <div class="flex-fill px-2">
+          <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "new-password",
+                               placeholder: t('devise.password_confirmation') %>
+        </div>
+        <div class="">
+          <%= bi_icon('key-fill') %>
+        </div>
+      </div>
+
+      <div class="mt-4 px-2">
+        <button type="submit" class="btn btn-success mb-3"><%= t('devise.change_my_passw') %></button>
+      </div>
+    <% end %>
+
+    <div class="px-2">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

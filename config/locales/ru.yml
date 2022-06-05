@@ -131,6 +131,8 @@ ru:
     remember_me: 'Запомнить меня'
     registr: 'Зарегистрироваться'
     forgot_passw: 'Забыли пароль?'
+    change_passw: 'Изменить пароль'
+    change_my_passw: 'Изменить мой пароль'
 
   events:
     confirm_event: 'Вы точно хотите удалить событие?'
