@@ -272,6 +272,8 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.omniauth :yandex, ENV['OMNI_YANDEX_ID'], ENV['OMNI_YANDEX_SECRET']
+  config.omniauth :vkontakte, ENV['OMNI_VK_ID'], ENV['OMNI_VK_SECRET']
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
