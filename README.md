@@ -1,24 +1,20 @@
-# README
+This is a RoR app for creating events and iniviting
+people on them.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+It use Rails 7 and Ruby 3, Bootstap for CSS and Yandex.Cloud
+for image storaging.
+***
+You will need Ruby (version 3.0.2).
 
-Things you may want to cover:
+### Usage
 
-* Ruby version
+**Bundle all gems**
 
-* System dependencies
+```
+$ bundle install
+```
+**Launch**
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+rails s
+```
